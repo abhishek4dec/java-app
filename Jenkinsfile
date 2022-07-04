@@ -11,7 +11,7 @@ pipeline{
 	stage("Maven Clean")
 		{
 			steps{
-				echo "Hello Abhishek"
+				sh "mvn clean package"
 			}
 		}
 	}

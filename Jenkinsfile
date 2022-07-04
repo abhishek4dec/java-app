@@ -1,4 +1,18 @@
-@Library("app-lib") _
+pipeline{
+	agent any
+	
+	stages{
+		
+	stage("Maven Clean")
+		{
+			steps{
+				sh "Hello Abhishek"
+			}
+		}
+	}
+}
+
+/*@Library("app-lib") _
 pipeline {
   agent any
 
@@ -30,3 +44,4 @@ pipeline {
     }
   }
 }
+*/

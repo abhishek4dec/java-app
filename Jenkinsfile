@@ -1,5 +1,10 @@
 pipeline{
-	agent any
+	agent {
+  		label 'linux'
+	      }
+	tools {
+  		maven 'maven2'
+        }
 	
 	stages{
 		
@@ -10,6 +15,15 @@ pipeline{
 			}
 		}
 	}
+	post {
+  success {
+    echo "this is success"
+  }
+  failure {
+    echo "this is fail"
+  }
+}
+
 }
 
 /*@Library("app-lib") _

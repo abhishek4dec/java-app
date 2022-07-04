@@ -6,7 +6,7 @@ pipeline{
 	stage("Maven Clean")
 		{
 			steps{
-				sh "Hello Abhishek"
+				echo "Hello Abhishek"
 			}
 		}
 	}

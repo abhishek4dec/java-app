@@ -14,8 +14,7 @@ pipeline{
 				sh "mvn clean package"
 			}
 		}
-	}
-	stage("Code Deployment"){
+		stage("Code Deployment"){
 		steps{
 			sshagent(['tomcat']) {
   					sh "mv target/*.war target/abhishek.war"
@@ -26,6 +25,8 @@ pipeline{
 				}
 		}
 	}
+	}
+	
 	post {
   success {
     echo "this is success"

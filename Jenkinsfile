@@ -1,4 +1,19 @@
+pipeline{
+	agent any
+	
+	stages{
+		
+	stage("Maven Clean")
+		{
+			steps{
+				sh "Hello Abhishek"
+			}
+		}
+	}
+}
 
+
+/*
 node {
    // This is to demo github action	
    def sonarUrl = 'sonar.host.url=http://172.31.30.136:9000'
@@ -50,3 +65,4 @@ DevOps Team""", cc: '', from: '', replyTo: '', subject: "${env.JOB_NAME} Success
    }
 }
 
+*/

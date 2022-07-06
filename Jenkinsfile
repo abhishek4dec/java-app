@@ -17,14 +17,8 @@ pipeline{
 		}
 		stage("Code Deployment"){
 		steps{
-			TomcatDeploy("abhishek Srivastava")
-			sshagent(['tomcat']) {
-  					sh "mv target/*.war target/abhishek.war"
-					sh "scp -o StrictHostKeyChecking=no target/abhishek.war ec2-user@172.31.1.220:/opt/tomcat9/webapps/"
-					sh "ssh ec2-user@172.31.1.220 /opt/tomcat9/bin/shutdown.sh"
-					sh "ssh ec2-user@172.31.1.220 /opt/tomcat9/bin/startup.sh"
-				
-				}
+			TomcatDeploy("tomcat","ec2-user",["172.31.1.220"])
+			
 		}
 	}
 	}

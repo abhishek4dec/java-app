@@ -5,8 +5,9 @@ pipeline{
 		stage("GIT Source Code")
 		{
 			steps{
-				git branch: 'dependabot/maven/junit-junit-4.13.1',
-				    url: 'https://github.com/abhishek4dec/java-app.git'
+				echo "This is GIT"
+				//git branch: 'dependabot/maven/junit-junit-4.13.1',
+				 //   url: 'https://github.com/abhishek4dec/java-app.git'
 			}
 		}
 		stage("Maven Clean")

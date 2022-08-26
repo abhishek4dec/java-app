@@ -2,13 +2,18 @@ pipeline{
 	agent any
 	
 	stages{
-		
-	stage("Maven Clean")
+		stage("GIT Source Code")
 		{
 			steps{
-				sh "Hello Abhishek"
+				git branch: 'dependabot/maven/junit-junit-4.13.1', url: 'https://github.com/abhishek4dec/java-app.git'
 			}
-		}
+		
+		stage("Maven Clean")
+			{
+				steps{
+					sh "Hello Abhishek"
+				}
+			}
 	}
 }
 

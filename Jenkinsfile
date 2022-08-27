@@ -1,23 +1,24 @@
 pipeline{
-	agent any
-	
-	stages{
-		stage("GIT Source Code")
-		{
-			steps{
-				echo "This is GIT"
-				//git branch: 'dependabot/maven/junit-junit-4.13.1',
-				    //url: 'https://github.com/abhishek4dec/java-app.git'
-			}
-		}
-		stage("Maven Clean")
-			{
-				steps{
-					sh "Hello Abhishek"
-				}
-			}
-	}
+    agent any
+    stages{
+        stage("Git Clone"){
+            steps{
+                echo "Clone code from git!"
+            }
+        }
+        stage("Maven Build"){
+            steps{
+                echo "building with maven"
+            }
+        }
+        stage("Tomcat deploy"){
+            steps{
+                echo "deploy to tomcat"
+            }
+        }
+    }
 }
+
 
 
 /*

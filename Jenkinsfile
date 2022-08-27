@@ -1,9 +1,5 @@
 pipeline{
-	agent {
-  docker {
-    image 'jenkins/jenkins:lts-jdk11'
-  }
-}
+	agent any
 	
 	stages{
 		stage("GIT Source Code")

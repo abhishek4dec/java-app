@@ -1,6 +1,6 @@
 pipeline{
 	agent {
-       		 image 'jenkins/jenkins:lts-jdk11' 
+		docker {image 'jenkins:lts-jdk11'}
    	 }
 	
 	stages{

@@ -3,20 +3,30 @@ pipeline{
 	agent {
 		label 'linux'
 	}
+	 tools {
+ 		 maven 'maven2'
+		}
+
     stages{
         stage("Git Clone"){
             steps{
                 echo "Clone code from git!"
+		     // Clone repo
+		git branch: 'master', 
+		credentialsId: 'github', 
+		url: 'https://github.com/javahometech/myweb'
             }
         }
         stage("Maven Build"){
             steps{
                 echo "building with maven"
+		    sh "mvn clean package"
             }
         }
         stage("Tomcat deploy"){
             steps{
-                TomcatDeploy("Abhishek")
+		    //credId,username,IpAddrs
+                TomcatDeploy("Tomcat-dev","ec2-user","172.31.22.100")
             }
         }
     }

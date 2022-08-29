@@ -1,3 +1,4 @@
+@Library('mylibs') _
 pipeline{
 	agent {
 		label 'linux'
@@ -15,7 +16,7 @@ pipeline{
         }
         stage("Tomcat deploy"){
             steps{
-                echo "deploy to tomcat"
+                TomcatDeploy("Abhishek")
             }
         }
     }

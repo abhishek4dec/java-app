@@ -1,9 +1,9 @@
 @Library('mylibs') _
 pipeline{
-	/*agent {
+	agent {
 		label 'linux'
-	}*/
-	agent any
+	}
+	
 	 tools {
  		 maven 'maven2'
 		}
@@ -27,7 +27,7 @@ pipeline{
         stage("Tomcat deploy"){
             steps{
 		    //credId,username,IpAddrs
-                TomcatDeploy("Tomcat-dev","ec2-user","172.31.22.100")
+                TomcatDeploy("Tomcat-dev","ec2-user","[172.31.22.100]")
             }
         }
     }

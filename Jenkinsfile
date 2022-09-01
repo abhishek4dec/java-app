@@ -3,12 +3,9 @@ pipeline{
 	agent {
 		label 'linux'
 	}
-	//agent any
-	
-	 tools {
+	tools {
  		 maven 'maven2'
 		}
-
     stages{
         stage("Git Clone"){
             steps{
@@ -29,7 +26,8 @@ pipeline{
         stage("Tomcat deploy"){
             steps{
 		    //credId,username,IpAddrs
-                TomcatDeploy("Tomcat-dev","ec2-user","[172.31.85.108]")
+		    sh "scp -o StrictHostKeyChecking=no target/myweb-8.3.3.war ec2-user@172.31.85.108:/opt/tomcat9/webapps"
+               // TomcatDeploy("Tomcat-dev","ec2-user","[172.31.85.108]")
             }
         }
     }

@@ -22,6 +22,7 @@ pipeline{
             steps{
                 echo "building with maven"
 		    sh "mvn clean package"
+		     echo "success with maven"
             }
         }
         stage("Tomcat deploy"){

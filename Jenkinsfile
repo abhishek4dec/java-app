@@ -28,7 +28,8 @@ pipeline{
 		    //credId,username,IpAddrs
 		     sshagent(['Tomcat-dev']) {
 		    sh "scp -o StrictHostKeyChecking=no target/myweb-8.3.3.war ec2-user@172.31.85.108:/opt/tomcat9/webapps"
-               // TomcatDeploy("Tomcat-dev","ec2-user","[172.31.85.108]")
+                TomcatDeploy("Tomcat-dev")
+			    // TomcatDeploy("Tomcat-dev","ec2-user","[172.31.85.108]")
 		     }
             }
         }

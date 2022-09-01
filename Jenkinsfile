@@ -1,9 +1,9 @@
 @Library('mylibs') _
 pipeline{
-	/*agent {
+	agent {
 		label 'linux'
-	}*/
-	agent any
+	}
+	//agent any
 	
 	 tools {
  		 maven 'maven2'
